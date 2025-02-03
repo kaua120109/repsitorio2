@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <title>NOME DA EMPRESA - EXEMPLO DE PÁGINA</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 16px;
+            max-width: 100%;
+            background-color: rgba(245, 245, 245, 1);
+        }
+        header {
+            background: #245c8b;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 1px #000;
+        }
+        h3 {
+            font-size: 1.9rem;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+        }
+        h4 {
+            font-size: 2rem;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+        .conteiner {
+            display: block;
+            background-color: #fff;
+            width: 60%;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            padding: 40px;
+        }
+        footer {
+            font-size: 1rem;
+            color: #fff;
+            background-color: #245c8b;
+            text-align: center;
+            padding: 10px;
+            text-shadow: 1px 1px 1px #000;
+        }
+        nav {
+            text-align: right;
+            margin-top: 10px;
+            font-weight: bold;
+            font-family: Arial, sans-serif;
+            font-size: 1.6rem;
+            margin-right: 2%;
+            word-spacing: 10px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 200ms ease-in-out;
+        }
+        nav a:hover {
+            color: rgba(169, 169, 169, 1);
+        }
+        button {
+            font-family: Arial, sans-serif;
+            font-size: 1.9rem;
+            background-color: #021a2e;
+            color: #fff;
+            border: solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #044c82;
+        }
+        input {
+            font-family: sans-serif;
+            font-size: 1.8rem;
+            padding: 5px;
+            border: solid 1px #ccc;
+            border-radius: 10px;
+            margin-left: 3%;
+            width: calc(100% - 6%);
+        }
+        p {
+            font-family: Arial, sans-serif;
+            text-align: justify;
+            padding: 10px;
+            font-size: 1.9rem;
+        }
+        h1, h2 {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #245c8b;
+            text-shadow: 1px 1px 1px #000;
+        }
+        #grid-conteiner {
+            margin-top: 5px;
+            background-color: #021a2e;
+            padding: 5px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .grid div {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">INÍCIO</a>
+            <a href="#">FGTS</a>
+            <a href="#">FÉRIAS</a>
+            <a href="#">DÉCIMOS</a>
+        </nav>
+        <h3>NOME DA EMPRESA</h3>
+        <h4>EXEMPLOS DE PÁGINA JAVASCRIPT</h4>
+    </header>
+
+    <section class="conteiner">
+        <h1>TEC BUHS INFORMÁTICA</h1>
+        <h2>Cursos de Informática e Tecnologia</h2>
+        <p>Olá!</p>
+        <p>Vamos falar um pouco sobre o conteúdo a seguir.</p>
+        <p>Nesta página vamos abordar um exemplo de site com as tecnologias HTML, CSS e JavaScript.</p>
+    </section>
+
+    <section class="conteiner">
+        <h2>FGTS</h2>
+        <p>O FGTS é uma poupança aberta pela empresa em nome do trabalhador que funciona como uma garantia em caso de demissão sem justa causa.</p> 
+        <h2>Cálculo</h2>
+        <label for="salario">Salário</label><br>
+        <input type="number" id="salario" placeholder="Insira o seu salário"><br><br>
+        <label for="tempo">Tempo trabalhado (em meses)</label><br>
+        <input type="number" id="tempo" placeholder="Insira o número de meses trabalhados"><br><br>
+        <button onclick="fgts()">CALCULAR</button>
+        <p><b>O valor aproximado de FGTS é de: R$ <span id="resultado"></span></b></p>
+    </section>
+
+    <footer>
+        <h3>NOME DA EMPRESA</h3>
+        <h4>EXEMPLO DE PÁGINAS EM JAVASCRIPT</h4>
+        <p>CONTATOS: exemplo01@gmail.com</p>
+        <p>CNPJ: 00.0001.0001/0001-01</p>
+    </footer>
+
+    <script>
+        function fgts() {
+            const salario = parseFloat(document.querySelector('#salario').value);
+            const tempo = parseInt(document.querySelector('#tempo').value);
+            const resultado = document.querySelector('#resultado');
+            if (!isNaN(salario) && !isNaN(tempo)) {
+                resultado.innerHTML = (salario * 0.08 * tempo).toFixed(2);
+            } else {
+                resultado.innerHTML = "Insira valores válidos.";
+            }
+        }
+    </script>
+</body>
+</html>
